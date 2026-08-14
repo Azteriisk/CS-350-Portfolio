@@ -1,0 +1,72 @@
+<mxfile host="65bd71144e">
+    <diagram id="state-machine-diag" name="Milestone 2 State Machine">
+        <mxGraphModel dx="883" dy="784" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontStyle=1;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="270" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="state_setup" value="&lt;b&gt;Initialization &amp;amp; Setup&lt;/b&gt;&lt;br&gt;Configure GPIO 18 (OUT)&lt;br&gt;Open Serial /dev/ttyS0&lt;br&gt;Baud: 115200" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;align=center;verticalAlign=middle;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="245" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="state_off" value="&lt;b&gt;State: LED OFF&lt;/b&gt;&lt;br&gt;GPIO 18 = Low&lt;br&gt;LED is Off&lt;br&gt;Wait for Serial cmd" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;align=center;verticalAlign=middle;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="245" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="state_on" value="&lt;b&gt;State: LED ON&lt;/b&gt;&lt;br&gt;GPIO 18 = High&lt;br&gt;LED is On&lt;br&gt;Wait for Serial cmd" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;align=center;verticalAlign=middle;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="245" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="state_exit" value="&lt;b&gt;Cleanup &amp;amp; Exit (Terminal)&lt;/b&gt;&lt;br/&gt;GPIO 18 = Low (Off)&lt;br/&gt;GPIO.cleanup()&lt;br/&gt;repeat = False" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#6a00ff;strokeColor=#3700CC;align=center;verticalAlign=middle;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="440" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="end" value="" style="ellipse;html=1;shape=endState;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="460" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;" parent="1" source="start" target="state_setup" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2" value="Default Transition" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;" parent="1" source="state_setup" target="state_off" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3" value="ON received" style="edgeStyle=arcEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;curved=1;" parent="1" source="state_off" target="state_on" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4" value="OFF received" style="edgeStyle=arcEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;curved=1;" parent="1" source="state_on" target="state_off" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e5" value="Other / OFF" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;curved=1;endArrow=block;" parent="1" source="state_off" target="state_off" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="460" y="200"/>
+                            <mxPoint x="410" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e6" value="Other / ON" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;curved=1;endArrow=block;" parent="1" source="state_on" target="state_on" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="720" y="200"/>
+                            <mxPoint x="670" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e7" value="EXIT / QUIT" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;" parent="1" source="state_off" target="state_exit" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e8" value="EXIT / QUIT" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;" parent="1" source="state_on" target="state_exit" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e9" value="KeyboardInterrupt&lt;br/&gt;(Ctrl+C)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;endArrow=block;fontColor=#B85450;" parent="1" source="state_setup" target="state_exit" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="210" y="480"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;" parent="1" source="state_exit" target="end" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

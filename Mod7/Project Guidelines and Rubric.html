@@ -1,0 +1,438 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Assignment Information</title>
+
+  <!-- HTML RUBRIC TEMPLATE -->
+
+  <!-- Bootstrap Grid -->
+  <link rel="stylesheet" href="/shared/custom_html/shared/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!--globalCampus.css containing typography standards -->
+  <link rel="stylesheet" href="/shared/HTML-Template-Library/GC Core Paced/module_templates/../assets/css/main.min.css">
+  <style>
+    h2 {
+      margin-bottom: 0;
+    }
+    p {
+      margin-top: 0;
+    }
+
+    #rubric-responsive table {
+      margin-left: auto;
+      margin-right: auto;
+      border-collapse: collapse;
+      max-width: 1080px;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    #rubric-responsive thead th:first-child {
+      width: 17%;
+    }
+    #rubric-responsive thead th:last-child {
+      width: 10%;
+    }
+
+    #rubric-responsive th,
+    #rubric-responsive td,
+    #rubric-responsive tbody > tr > :nth-child(1) {
+      border: 1px solid black;
+      padding: 7px;
+    }
+
+    #rubric-responsive th,
+    #rubric-responsive tbody > tr > :nth-child(1) {
+      background-color: #f5f5f5;
+    }
+
+#rubric-responsive th {text-align: center;
+                      }
+    #rubric-responsive td,
+    #rubric-responsive tbody > tr > :nth-child(1) {
+      vertical-align: text-top;
+    }
+
+    /* Center data in "Value" column */
+    #rubric-responsive tbody > tr > :last-child {
+      text-align: center;
+    }
+
+    /* Style first column like header row in case <th> isn't used */
+    #rubric-responsive tbody > tr > :nth-child(1) {
+      font-weight: bold;
+      text-align: center;
+    }
+
+/* right align total: text */
+      #rubric-responsive tbody > tr:last-child > :nth-child(1) {
+        font-weight: bold;
+        text-align: right;
+}
+
+    @media only screen and (max-width: 800px) {
+
+      /* Display table elements as block */
+      #rubric-responsive table,
+      #rubric-responsive thead,
+      #rubric-responsive tbody,
+      #rubric-responsive th,
+      #rubric-responsive td,
+      #rubric-responsive tr,
+      #rubric-responsive tfoot {
+        display: block;
+      }
+
+      #rubric-responsive caption {
+        display: inline-block;
+        margin: 0px auto;
+      }
+
+      /* Remove border from table and center it on screen */
+      #rubric-responsive table {
+        border: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+      }
+
+
+    /* Hide table headers (but not display: none; (for accessibility) */
+      #rubric-responsive thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      /* Style responsive table rows */
+      #rubric-responsive tr {
+        border: 1px solid #ccc;
+      }
+
+      /* Style responsive table cells */
+      #rubric-responsive td {
+        border: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      #rubric-responsive td:before {
+      /* Bring "data-title" attribute into table cells */
+        content: attr(data-attr);
+      /* display it as inline block so it doesn't interfere with <td> */
+        display: inline-block;
+      /* make it take up it's entire "row" */
+        width: 100%;
+      /* bold font so it looks like a th */
+        font-weight: bold;
+      }
+
+  /* Remove "data-title" attribute from first child <td> cells */
+  /* this removes "Criteria" from the Total row, and will remove criteria from any <td> cells that should be <th> */
+      #rubric-responsive tbody>tr>td:first-child:before {
+          content: none;
+      }
+
+      /* Center data in "Value" column */
+      #rubric-responsive tbody > tr > :last-child {
+        text-align: left;
+      }
+
+      /* Don't display "100%" cell */
+      #rubric-responsive tr:last-child td:last-of-type {
+        display: none;
+      }
+
+      /* Add "100%" after Total:  */
+      #rubric-responsive
+        tr:last-child
+        td:first-of-type::after {
+        content: " 100%";
+      }
+      /* remove padding from last row */
+      #rubric-responsive tr:last-child > td {
+        padding: 7px;
+      }
+    }
+
+    /* Print Styles*/
+    @media print {
+      @page {
+        size: landscape;
+      }
+
+      span.rsbtn_text {
+        display: none !important;
+      }
+
+      p,
+      ul,
+      ol,
+      li,
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr,
+      tfoot {
+        font-size: 12px;
+      }
+
+      h1,
+      h2 {
+        font-size: 90%;
+      }
+
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 80%;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin-bottom: 5px;
+        margin-top: 0px;
+      }
+
+      ul,
+      ol {
+        margin-bottom: 5px;
+        margin-top: 0px;
+      }
+
+      .d-print-none {
+        display: none;
+      }
+
+      .d-print-block {
+        display: block;
+      }
+    }
+  </style> 
+     
+  <style>
+    img {
+      float: right;
+      margin-left: 20px;
+      width: 38vw;
+    }
+@media only screen and (max-width: 800px) {
+    img {
+      float:none;
+      align: center;
+      width:100vw;
+      display: block; 
+      margin-left: auto; 
+      margin-right: auto;
+    }
+  </style>
+  </head><body><h1>CS 350 Final Project Guidelines and Rubric</h1>
+<!--Begin copy to add more sections. Use appropriate heading tags for subsections-->
+<h2>Competencies</h2>
+<p>In this project, you will demonstrate your mastery of the following competencies:&nbsp;</p>
+<ul>
+<li>Write interface software to control hardware components</li>
+<li>Analyze fundamental considerations regarding hardware architecture design and their impact on application performance</li>
+<li>Recommend and justify emerging systems architectures and technologies based on business requirements&nbsp;</li>
+</ul>
+<!--End copy to add section->
+<!--Do NOT change text for "What to Submit" heading-->
+<h2>Scenario&nbsp;</h2>
+<p>The global smart thermostat market is forecasted to reach almost $9 billion by 2026. SysTec’s CEO wants to enter this lucrative market and has tasked your engineering department with creating a smart thermostat. SysTec develops analytics software for servers, but the CEO remembers from your interview that you took an embedded systems course and asks you to build a prototype. The final goal is to develop a thermostat that sends data to SysTec’s server software over Wi-Fi, but they first need a working prototype of the low-level thermostat functionality.&nbsp;</p>
+<p>For the prototype, you will use the following:&nbsp;</p>
+<ul>
+<li>The AHT20 temperature sensor to read the room temperature (via I2C)</li>
+<li>Two status LEDs to indicate whether the system is heating or cooling with the output to the thermostat
+<ul>
+<li>Red LED fading in and out = heat on (via GPIO)&nbsp;</li>
+<li>Blue LED fading in and out = cooling on (via GPIO)</li>
+</ul>
+</li>
+<li>One button to toggle between three states: off, heating, and cooling</li>
+<li>Two buttons to increase and decrease the set temperature (via GPIO interrupt)&nbsp;</li>
+</ul>
+<p>The date and time, current temperature, and temperature set point should be displayed on the LCD, and data will be sent through the serial port (UART) from the thermostat to simulate the data being sent to the server.&nbsp;</p>
+<p>You will also create a written report for your team to ensure that the system you created is based on SysTec’s business requirements and technical specifications. While your team is testing your code, you have been asked to architect the project's next phase in your report: connecting the thermostat to the cloud. Although you prototyped on the development board, the production product will utilize an integrated Wi-Fi solution. In this next phase, you are going to analyze various hardware architectures (from Raspberry Pi, Microchip, and Freescale) and recommend and justify the architecture decision based on the following business requirements:&nbsp;</p>
+<ul>
+<li>The thermostat must support the peripherals used in the project.</li>
+<li>The thermostat must connect to the cloud via Wi-Fi.</li>
+<li>The architecture chosen must have enough Flash and RAM to support the code.</li>
+</ul>
+<p>Your report will compare and contrast the three hardware architectures based on the above metrics.</p>
+<h2>Directions&nbsp;</h2>
+<p>Begin your work by accessing the Final Project Thermostat Lab Guide document in the Supporting Materials section. To accomplish the work outlined in the guide, you will need the following:&nbsp;</p>
+<ul>
+<li>Raspberry Pi 4B</li>
+<li>A code editor of your choice</li>
+<li>The circuit built throughout this course (with the final additions made within the Final Project Thermostat Lab Guide).&nbsp;</li>
+</ul>
+<p>Specifically, you must address the following rubric criteria:&nbsp;</p>
+<ol>
+<li>Develop <strong>code</strong> for the specified <strong>functionality</strong>. Remember, the goals of this project include reading room temperature, indicating the result via LED output, increasing or decreasing the set temperature, displaying the information to the user, and simulating the data being sent to a server.&nbsp;</li>
+<li>Create code that initializes the <strong>state machine</strong> and uses it to drive specified actions. This involves two steps: initializing the state machine and using it to run an action.</li>
+<li>Create code that detects button presses using the GPIOZero library. This will process the GPIO <strong>interrupts</strong> generated by the button presses. This involves two steps: detecting the button presses and using the result to run an action.</li>
+<li>Create code to initialize the <strong>I2C peripheral</strong> and use it to read the temperature sensor. This code must initialize the I2C peripheral and read the temperature sensor correctly.</li>
+<li>Create code to initialize the <strong>GPIO peripherals</strong> and use them. Remember that the GPIO indicates whether the system is heating or cooling via LED and sets the temperature with two buttons (one to increase and one to decrease temperature). Note that if the set and current temperatures are equal, the LED should be solid rather than fading in and out.</li>
+<li>Create code to initialize the <strong>UART peripheral</strong> and output specified data. The UART should be used to simulate data being sent to the server. Ensure the UART is initialized to the correct baud rate and serial configuration.</li>
+<li>Implement (in code) the <strong>state machine functionality</strong>. This should match the specifications described in the Final Project Thermostat Lab Guide.</li>
+<li>Describe the operation and technical specification through <strong>state machine documentation</strong>. This should address all the required functionality and be documented according to industry standards.&nbsp;</li>
+<li>Apply coding <strong>best practices</strong> in formatting, commenting, and functional logic.</li>
+<li>Explain how the thermostat supports the <strong>peripherals</strong> used in the project. Ensure you have included all the required details from the scenario in your report. You should discuss each of the three outlined hardware architectures: Raspberry Pi, Microchip, and Freescale.</li>
+<li>Explain how the thermostat connects to the <strong>cloud</strong> via Wi-Fi. Discuss all three architectures in your work.</li>
+<li>Discuss the <strong>architectures’ capabilities</strong> that support the code. Include all three architectures in your discussion.&nbsp;</li>
+</ol>
+<h2>What to Submit</h2>
+<p>To complete this project, you must submit the following:&nbsp;</p>
+<ul>
+<li><strong>State Machine:</strong> The state machine should be created as a draw.io file and then exported as a PDF file for submission.</li>
+<li><strong>Code:</strong> The code you used to run your thermostat should be included as a Python file in your submission.</li>
+<li><strong>Video:</strong> Submit a video demonstration of your project’s functionality. While your code is running, record your board and narrate to describe what the LEDs are doing. Be sure to push your button during the video to show what happens. Your video should be 1–2 minutes long. Please contact your instructor if you encounter difficulties filming the lights on your hardware component.</li>
+<li><strong>Report:</strong> Your reflections should be documented in a 1- to 2-page Microsoft Word document with 12-point Times New Roman font, double spacing, and one-inch margins. Sources should be cited according to APA style.&nbsp;</li>
+</ul>
+<h2>Supporting Materials&nbsp;</h2>
+<p>The following resource supports your work on the project:&nbsp;</p>
+<p><a href="course_documents/CS%20350%20Final%20Project%20Thermostat%20Lab%20Guide.pdf?isCourseFile=true" target="_blank" rel="noopener">Final Project Thermostat Lab Guide</a><br>Follow the steps and answer the questions in this guide to complete this assignment.</p>
+<h2>AI Usage</h2>
+<p>If you use gen AI tools to support your work on this assignment, be sure to follow <a href="https://snhu.ink/StudentGenAIGuide" target="_blank" rel="noopener">these AI usage guidelines</a>. You must acknowledge your use of these tools in your work. Guidelines on how to cite AI tools can be found in <a href=" https://snhu.ink/CitationAndAI" target="_blank" rel="noopener">this Shapiro Library guide</a>.</p>
+<h2 style="text-align: center;">Final Project Rubric</h2>
+<div id="rubric-responsive">
+<table>
+<thead>
+<tr>
+<th class="table-borderless" scope="col">Criteria</th>
+<th scope="col">Exceeds Expectations (100%)</th>
+<th scope="col">Meets Expectations (85%)</th>
+<th scope="col">Partially Meets Expectations (55%)</th>
+<th scope="col">Does Not Meet Expectations (0%)</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Code Functionality</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Develops code for all the specified functionality</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include developing for the individual requirements and ensuring that they work together as intended</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td data-attr="Value">10</td>
+</tr>
+<tr>
+<th scope="row">State Machine</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Creates code that initializes the state machine and uses it to drive specified actions</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include initializing the state machine and then using it to run an appropriate action</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td>8</td>
+</tr>
+<tr>
+<th scope="row">Interrupt</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Creates code that uses interrupts to detect button presses</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include detecting the button presses and then using the result to run an appropriate action</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td>8</td>
+</tr>
+<tr>
+<th scope="row">I2C Peripheral</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Creates code to initialize the I2C peripheral and use it to read the temperature sensor</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include both initializing the I2C peripheral and then using it to run an appropriate action</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td>8</td>
+</tr>
+<tr>
+<th scope="row">GPIO Peripherals</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Creates code to initialize the GPIO peripherals and use them</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include both initializing the GPIO peripherals and then using them to run an appropriate action</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td>8</td>
+</tr>
+<tr>
+<th scope="row">UART Peripheral</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Creates code to initialize the UART peripheral and output specified data</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include both initializing the UART peripheral and then outputting appropriate data</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td>8</td>
+</tr>
+<tr>
+<th scope="row">State Machine Functionality</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Implements the state machine functionality in code</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include implementing all intended functionality and matching the specifications to the provided description</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td>10</td>
+</tr>
+<tr>
+<th scope="row">State Machine Documentation</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Describes the operation and technical specification through state machine documentation</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include addressing all required functionality and documenting it according to industry standards</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td>10</td>
+</tr>
+<tr>
+<th scope="row">Best Practices</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Applies coding best practices in formatting, commenting, and functional logic</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include use of formatting best practices to make code easy to read, commenting best practices to ensure code is clearly explained, or functional logic so the program runs as expected</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td>5</td>
+</tr>
+<tr>
+<th scope="row">Report: Peripherals</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Explains how the thermostat supports the peripherals used in the project</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include discussing all three architectures or using evidence to support the claims</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td>6</td>
+</tr>
+<tr>
+<th scope="row">Report: Cloud</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Explains how the thermostat connects to the cloud via Wi-Fi</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include discussing all three architectures or using evidence to support the claims</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td>6</td>
+</tr>
+<tr>
+<th scope="row">Report: Device Capabilities</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations in an exceptionally clear, insightful, sophisticated, or creative manner</td>
+<td data-attr="Meets Expectations (85%)">Discusses the architectures’ capabilities that support the code</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but with errors or omissions; areas for improvement may include discussing all three architectures or using evidence to support the claims</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not attempt criterion</td>
+<td>6</td>
+</tr>
+<tr>
+<th scope="row">Clear Communication</th>
+<td data-attr="Exceeds Expectations (100%)">Exceeds expectations with an intentional use of language that promotes a thorough understanding</td>
+<td data-attr="Meets Expectations (85%)">Consistently and effectively communicates in an organized way to a specific audience</td>
+<td data-attr="Partially Meets Expectations (55%)">Shows progress toward meeting expectations, but communication is inconsistent or ineffective in a way that negatively impacts understanding</td>
+<td data-attr="Does Not Meet Expectations (0%)">Shows no evidence of consistent, effective, or organized communication</td>
+<td>3</td>
+</tr>
+<tr>
+<th scope="row">Citations and Attributions</th>
+<td data-attr="Exceeds Expectations (100%)">Uses citations for ideas requiring attribution, with few or no minor errors</td>
+<td data-attr="Meets Expectations (85%)">Uses citations for ideas requiring attribution, with consistent minor errors</td>
+<td data-attr="Partially Meets Expectations (55%)">Uses citations for ideas requiring attribution, with major errors</td>
+<td data-attr="Does Not Meet Expectations (0%)">Does not use citations for ideas requiring attribution</td>
+<td>4</td>
+</tr>
+<tr>
+<td colspan="5" style="text-align: right;">Total:</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+</div></body></html>

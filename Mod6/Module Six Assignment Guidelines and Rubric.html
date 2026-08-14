@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Assignment Information</title>
+
+  <!-- HTML RUBRIC TEMPLATE -->
+
+  <!-- Bootstrap Grid -->
+  <link rel="stylesheet" href="/shared/custom_html/shared/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!--globalCampus.css containing typography standards -->
+  <link rel="stylesheet" href="/shared/HTML-Template-Library/GC Core Paced/module_templates/../assets/css/main.min.css">
+  <style>
+    h2 {
+      margin-bottom: 0;
+    }
+    p {
+      margin-top: 0;
+    }
+
+    #rubric-responsive table {
+      margin-left: auto;
+      margin-right: auto;
+      border-collapse: collapse;
+      max-width: 1080px;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    #rubric-responsive thead th:first-child {
+      width: 17%;
+    }
+    #rubric-responsive thead th:last-child {
+      width: 10%;
+    }
+
+    #rubric-responsive th,
+    #rubric-responsive td,
+    #rubric-responsive tbody > tr > :nth-child(1) {
+      border: 1px solid black;
+      padding: 7px;
+    }
+
+    #rubric-responsive th,
+    #rubric-responsive tbody > tr > :nth-child(1) {
+      background-color: #f5f5f5;
+    }
+
+#rubric-responsive th {text-align: center;
+                      }
+    #rubric-responsive td,
+    #rubric-responsive tbody > tr > :nth-child(1) {
+      vertical-align: text-top;
+    }
+
+    /* Center data in "Value" column */
+    #rubric-responsive tbody > tr > :last-child {
+      text-align: center;
+    }
+
+    /* Style first column like header row in case <th> isn't used */
+    #rubric-responsive tbody > tr > :nth-child(1) {
+      font-weight: bold;
+      text-align: center;
+    }
+
+/* right align total: text */
+      #rubric-responsive tbody > tr:last-child > :nth-child(1) {
+        font-weight: bold;
+        text-align: right;
+}
+
+    @media only screen and (max-width: 800px) {
+
+      /* Display table elements as block */
+      #rubric-responsive table,
+      #rubric-responsive thead,
+      #rubric-responsive tbody,
+      #rubric-responsive th,
+      #rubric-responsive td,
+      #rubric-responsive tr,
+      #rubric-responsive tfoot {
+        display: block;
+      }
+
+      #rubric-responsive caption {
+        display: inline-block;
+        margin: 0px auto;
+      }
+
+      /* Remove border from table and center it on screen */
+      #rubric-responsive table {
+        border: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+      }
+
+
+    /* Hide table headers (but not display: none; (for accessibility) */
+      #rubric-responsive thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      /* Style responsive table rows */
+      #rubric-responsive tr {
+        border: 1px solid #ccc;
+      }
+
+      /* Style responsive table cells */
+      #rubric-responsive td {
+        border: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      #rubric-responsive td:before {
+      /* Bring "data-title" attribute into table cells */
+        content: attr(data-attr);
+      /* display it as inline block so it doesn't interfere with <td> */
+        display: inline-block;
+      /* make it take up it's entire "row" */
+        width: 100%;
+      /* bold font so it looks like a th */
+        font-weight: bold;
+      }
+
+  /* Remove "data-title" attribute from first child <td> cells */
+  /* this removes "Criteria" from the Total row, and will remove criteria from any <td> cells that should be <th> */
+      #rubric-responsive tbody>tr>td:first-child:before {
+          content: none;
+      }
+
+      /* Center data in "Value" column */
+      #rubric-responsive tbody > tr > :last-child {
+        text-align: left;
+      }
+
+      /* Don't display "100%" cell */
+      #rubric-responsive tr:last-child td:last-of-type {
+        display: none;
+      }
+
+      /* Add "100%" after Total:  */
+      #rubric-responsive
+        tr:last-child
+        td:first-of-type::after {
+        content: " 100%";
+      }
+      /* remove padding from last row */
+      #rubric-responsive tr:last-child > td {
+        padding: 7px;
+      }
+    }
+
+    /* Print Styles*/
+    @media print {
+      @page {
+        size: landscape;
+      }
+
+      span.rsbtn_text {
+        display: none !important;
+      }
+
+      p,
+      ul,
+      ol,
+      li,
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr,
+      tfoot {
+        font-size: 12px;
+      }
+
+      h1,
+      h2 {
+        font-size: 90%;
+      }
+
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 80%;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin-bottom: 5px;
+        margin-top: 0px;
+      }
+
+      ul,
+      ol {
+        margin-bottom: 5px;
+        margin-top: 0px;
+      }
+
+      .d-print-none {
+        display: none;
+      }
+
+      .d-print-block {
+        display: block;
+      }
+    }
+  </style> 
+     
+  <style>
+    img {
+      float: right;
+      margin-left: 20px;
+      width: 38vw;
+    }
+@media only screen and (max-width: 800px) {
+    img {
+      float:none;
+      align: center;
+      width:100vw;
+      display: block; 
+      margin-left: auto; 
+      margin-right: auto;
+    }
+  </style>
+  </head><body><h1>CS 350 Module Six Assignment Guidelines and Rubric</h1>
+<!--Begin copy to add more sections. Use appropriate heading tags for subsections-->
+<h2>Overview</h2>
+<p>The circuit you have worked on throughout this course has grown in complexity, going from a singular LED light to a circuit with an LED display, buttons, and other LED lights. Now that the 16x2 display is installed, you can begin programming the device to show information that other circuit components are picking up. &nbsp;</p>
+<p>In this lab, you will attach a temperature and humidity sensor to the QWIIC cable you attached to your Raspberry Pi during its initial setup. You will integrate the sensor into the circuit and develop code that enables it to pass the information it collects through your Raspberry Pi and display it on the 16x2 display.</p>
+<!--End copy to add section->
+<!--Do NOT change text for "What to Submit" heading-->
+<h2>Directions&nbsp;</h2>
+<p>Your goal is to successfully install the temperature and humidity sensor. To complete this lab, you must ensure your 16x2 display component meets the requirements listed in the lab guide, and you must write a brief explanation of your process while documenting any challenges you faced along the way.&nbsp;</p>
+<p>Specifically, you must address the following rubric criteria:&nbsp;</p>
+<ol>
+<li><strong>Install the temperature and humidity sensor</strong>. Follow the directions in the Module Six Lab Guide in the Supporting Materials section.</li>
+<li><strong>Write a brief reflection</strong> on the process you followed and any challenges you faced. Were you able to overcome these challenges? If so, how? Are there any areas where you still need help? This is your opportunity to receive your instructor's assistance on the installation process, so be as clear in your explanation as possible.&nbsp;</li>
+</ol>
+<h2>What to Submit</h2>
+<p>Submit your explanation of approximately 200 words as a Microsoft Word document.</p>
+<h2>Supporting Materials  &nbsp;</h2>
+<p>The following resources support your work on the project:  &nbsp;</p>
+<p><a href="course_documents/CS%20350%20Module%20Six%20Lab%20Guide.pdf?isCourseFile=true" target="_blank" rel="noopener">Module Six Lab Guide</a><br>Follow the steps in this guide to successfully install the needed software packages, set up the temperature and humidity sensor circuit, and understand the sensor's required programming capabilities.</p>
+<h2>AI Usage</h2>
+<p>If you use gen AI tools to support your work on this assignment, be sure to follow <a href="https://snhu.ink/StudentGenAIGuide" target="_blank" rel="noopener">these AI usage guidelines</a>. You must acknowledge your use of these tools in your work. Guidelines on how to cite AI tools can be found in <a href=" https://snhu.ink/CitationAndAI" target="_blank" rel="noopener">this Shapiro Library guide</a>.</p>
+<h2 style="text-align: center;">Module Six Assignment Rubric</h2>
+<div id="rubric-responsive">
+<table>
+<thead>
+<tr>
+<th class="table-borderless" scope="col">Criteria</th>
+<th scope="col">Meets Expectations (100%)</th>
+<th scope="col">Does Not Meet Expectations (0%)</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Temperature and Humidity Sensor</th>
+<td data-attr="[Insert Level 1]">Attempts to install the temperature and humidity sensor and troubleshoot code to meet the required criteria in the lab</td>
+<td data-attr="[Insert Level 4]">Does not attempt to address criterion</td>
+<td data-attr="Value">25</td>
+</tr>
+<tr>
+<th scope="row">Written Reflection</th>
+<td>Attempts to address the criterion by describing the experience of installing the temperature and humidity sensor to the circuit, updating the Raspberry Pi packages, and editing the software template to craft code that meets the requirements described in the Module Six Lab Guide</td>
+<td>Does not attempt to address criterion</td>
+<td>75</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: right;">Total:</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+</div></body></html>

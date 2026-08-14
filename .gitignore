@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large submission video files and archives (>100MB)
+*.mov
+*.MOV
+*.mp4
+*.mkv
+*.webm
+*.zip
+*.tar.gz
+
+# IDE and Environment
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
