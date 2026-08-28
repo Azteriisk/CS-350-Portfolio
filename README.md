@@ -1,3 +1,9 @@
+> **Course**: CS 350: Emerging Systems Architectures & Technologies  
+> **Description**: Emerging Systems Architectures & Technologies Portfolio  
+> **Part of**: [CS SWE Degree Path](https://github.com/Azteriisk/CS-SWE-Degree-Path)
+
+---
+
 # CS-350: Emerging Systems Architectures
 
 This repository contains coursework, lab guides, assignments, and Python source code developed for **CS-350: Emerging Systems Architectures** at Southern New Hampshire University (SNHU).
